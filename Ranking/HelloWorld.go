@@ -22,6 +22,7 @@ func getGoogleFeedback(w http.ResponseWriter, r *http.Request) {
 		// handle error
 		io.WriteString(w, "Google No Found!\n")
 	}
+	fmt.Printf("Status is ",resp.StatusCode)
 	defer resp.Body.Close()
     body, err := io.ReadAll(resp.Body)
 	if err != nil {
